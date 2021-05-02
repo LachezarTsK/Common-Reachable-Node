@@ -1,5 +1,3 @@
-package commonReachableNode.gitHub;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -32,8 +30,7 @@ public class Solution {
   @return 'true' if such a node exists, otherwise 'false'.
   */
 
-  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(
-      int pointOne, int pointTwo) {
+  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(int pointOne, int pointTwo) {
     Set<Integer> visited_fromPointOne = bfs_recordNodes_reachedFromStart(pointOne);
     Set<Integer> visited_fromPointTwo = bfs_recordNodes_reachedFromStart(pointTwo);
 
