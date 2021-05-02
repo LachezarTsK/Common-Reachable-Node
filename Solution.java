@@ -1,5 +1,3 @@
-package commonReachableNode.gitHub;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -39,8 +37,7 @@ public class Solution {
   @return 'true' if such a node exists, otherwise 'false'.
   */
 
-  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(
-      int pointOne, int pointTwo) {
+  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(int pointOne, int pointTwo) {
 
     /*
     Since the problem statement does not mention explicitly that the desginated
