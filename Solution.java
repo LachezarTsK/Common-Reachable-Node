@@ -1,3 +1,5 @@
+package commonReachableNode.gitHub;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -8,6 +10,13 @@ public class Solution {
 
   public Map<Integer, HashSet<Integer>> nodesAndEdges;
 
+  /*
+    By the problem design on binarysearch.com, we have to work around the given method
+    'public boolean solve(int[][] edges, int pointOne, int pointTwo)'
+    so that the code can be run on the website. Even though the name 'solve' does not make
+    a lot of sense, it is left as it is, so that the code can be run directly
+    on the website, without any modifications.
+  */
   public boolean solve(int[][] edges, int pointOne, int pointTwo) {
     if (pointOne == pointTwo) {
       return true;
@@ -30,14 +39,25 @@ public class Solution {
   @return 'true' if such a node exists, otherwise 'false'.
   */
 
-  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(int pointOne, int pointTwo) {
+  public boolean checkForNode_thatCanReachTwoGivenPoints_inDirectedGraph(
+      int pointOne, int pointTwo) {
+
+    /*
+    Since the problem statement does not mention explicitly that the desginated
+    integer for each node starts from '0' and goes on in increasing consequtive order,
+    we assume that the desginated integer for each node can be any 32-bits integer,
+    as long as it is unique for each node. Therefore, we apply a HashSet for the visited nodes.
+
+    Otherwise, we could apply a boolean array for the visited nodes
+    in order to streamline the code.
+    */
     Set<Integer> visited_fromPointOne = bfs_recordNodes_reachedFromStart(pointOne);
     Set<Integer> visited_fromPointTwo = bfs_recordNodes_reachedFromStart(pointTwo);
 
     /*
     A node that can be reached from both pointOne and pointTwo in the reversed graph.
     Thus, in the original configuration of the graph's edges, we can reach both
-    pointOne and pointTwo.
+    pointOne and pointTwo from this node.
     */
     boolean commonReachableNode_isFound = false;
 
